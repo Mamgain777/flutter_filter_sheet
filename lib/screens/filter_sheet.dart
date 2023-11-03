@@ -115,7 +115,7 @@ class FilterSheetState extends State<FilterSheet> {
                           currentFilter = sheetFilters.keys.elementAt(index);
                         });
                       },
-                      style: (currentFilter == key)?isCurrenFilter():const ButtonStyle(),
+                      style: (currentFilter == key)?isCurrenFilter():isInactiveFilter(),
                       child: Text(key, style: const TextStyle(fontSize: 16.0),textAlign: TextAlign.left,),
                     ),
                   );
@@ -183,6 +183,12 @@ ButtonStyle isCurrenFilter(){
       ),
     ),
     foregroundColor: MaterialStateProperty.all(Colors.white),
+  );
+}
+
+ButtonStyle isInactiveFilter() {
+  return ButtonStyle(
+    foregroundColor: MaterialStateProperty.all(Colors.pinkAccent),
   );
 }
 
